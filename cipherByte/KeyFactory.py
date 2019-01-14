@@ -1,9 +1,12 @@
+import hashlib
+import secrets
 
-def generateBlockKey(password: bytearray, blocId: bytearray, uniqueSignature: bytearray) -> bytearray:
-    return
+def generate_block_key(password: bytearray, blocId: bytearray, uniqueSignature: bytearray) -> bytearray:
+    inputCombination: bytearray = uniqueSignature + password + blocId
+    return sha_512_Hash(inputCombination)
 
-def generateUnqiueSignature(n: int) -> bytearray:
-    return
+def generate_unqiue_signature(n: int) -> bytearray:
+    return secrets.token_bytes(n)
 
-def sha512Hash(input: bytearray) -> bytearray:
-    return
+def sha_512_hash(input: bytearray) -> bytearray:
+    return hashlib.sha512().update(input).digest()
