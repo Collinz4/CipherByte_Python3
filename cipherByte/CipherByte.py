@@ -1,9 +1,9 @@
 from cipherByte import CipherProcessor
 
 
-def encrypt():
-    return CipherProcessor.encrypt()
+def encrypt(data: bytearray, password: str):
+    return CipherProcessor.encrypt(data, password)
 
 
-def decrypt():
-    return CipherProcessor.decrypt()
+def decrypt(data: bytearray, password: str):
+    return CipherProcessor.decrypt(data, password)
